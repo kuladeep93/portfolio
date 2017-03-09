@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>kuladeep surebathina portfolio</title>
+        <meta name="description" content="Decorative &amp; interactive isometric &amp; 3D grids." />
+        <meta name="keywords" content="isometric, grid, images, masonry, perspective" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" />
+        <script src="js/modernizr.custom.js"></script>
+    </head>
+    <body class="demo-1">
+        <main>
+            <header class="demo2-header">
+                <h1>Kuladeep portfolio</h1>
+                <p>Check out few of my works, You may like<p>
+            </header>
+            <div class="isolayer isolayer--scroll1 isolayer--shadow">
+                <ul class="grid grid--effect-flip">
+                    <li class="grid__item">
+                        <a class="grid__link" href="http://healthplusasia.com" target="_blank">
+                            <img class="grid__img layer" src="img/canvas.png" alt="Canvas Dummy" />
+                            <img class="grid__img layer" src="img/wireframe.png" alt="Wireframe Dummy" />
+                            <img class="grid__img layer" src="img/porjects/health.png" alt="health plus asia" />
+                            <span class="grid__title">Health Plus Asia</span>
+                        </a>
+                    </li>
+                    <li class="grid__item">
+                        <a class="grid__link" href="http://new.excellencia.co.in" target="_blank">
+                            <img class="grid__img layer" src="img/canvas.png" alt="Canvas Dummy" />
+                            <img class="grid__img layer" src="img/wireframe.png" alt="Wireframe Dummy" />
+                            <img class="grid__img layer" src="img/porjects/excellencia.png" alt="excellencia" />
+                            <span class="grid__title">Excellencia</span>
+                        </a>
+                    </li>
+                    <li class="grid__item">
+                        <a class="grid__link" href="http://powerbazar.in" target="_blank">
+                            <img class="grid__img layer" src="img/canvas.png" alt="Canvas Dummy" />
+                            <img class="grid__img layer" src="img/wireframe.png" alt="Wireframe Dummy" />
+                            <img class="grid__img layer" src="img/porjects/powerbazar.png" alt="powerbazar" />
+                            <span class="grid__title">Powerbazar</span>
+                        </a>
+                    </li>
+                    <li class="grid__item">
+                        <a class="grid__link" href="http://mundadugu.org" target="_blank">
+                            <img class="grid__img layer" src="img/canvas.png" alt="Canvas Dummy" />
+                            <img class="grid__img layer" src="img/wireframe.png" alt="Wireframe Dummy" />
+                            <img class="grid__img layer" src="img/porjects/mundadugu.png" alt=" mundadugu" />
+                            <span class="grid__title">Mundadugu</span>
+                        </a>
+                    </li>
+                    <li class="grid__item">
+                        <a class="grid__link" href="http://schoolgates.in" target="_blank">
+                            <img class="grid__img layer" src="img/canvas.png" alt="Canvas Dummy" />
+                            <img class="grid__img layer" src="img/wireframe.png" alt="Wireframe Dummy" />
+                            <img class="grid__img layer" src="img/porjects/schoolgates.png" alt="schoolgates" />
+                            <span class="grid__title">Schoolgates</span>
+                        </a>
+                    </li>
+                    <li class="grid__item">
+                        <a class="grid__link" href="http://www.subhasanagreens.com/" target="_blank">
+                            <img class="grid__img layer" src="img/canvas.png" alt="Canvas Dummy" />
+                            <img class="grid__img layer" src="img/wireframe.png" alt="Wireframe Dummy" />
+                            <img class="grid__img layer" src="img/porjects/subhasanagreens.png" alt="subhasana greens" />
+                            <span class="grid__title">Subhasana greens</span>
+                        </a>
+                    </li>
+                    <li class="grid__item">
+                        <a class="grid__link" href="http://www.vcpss.com" target="_blank">
+                            <img class="grid__img layer" src="img/canvas.png" alt="Canvas Dummy" />
+                            <img class="grid__img layer" src="img/wireframe.png" alt="Wireframe Dummy" />
+                            <img class="grid__img layer" src="img/porjects/vcpss.png" alt="vcpss" />
+                            <span class="grid__title">VCPSS</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </main>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/dynamics.min.js"></script>
+        <script src="js/classie.js"></script>
+        <script src="js/animOnScroll.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            (function () {
+                function getRandomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+
+                [].slice.call(document.querySelectorAll('.isolayer')).forEach(function (el) {
+                    new IsoGrid(el, {
+                        type: 'scrollable',
+                        transform: 'translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg)',
+                        stackItemsAnimation: {
+                            properties: function (pos) {
+                                return {
+                                    translateZ: (pos + 1) * 50,
+                                    rotateZ: getRandomInt(-3, 3)
+                                };
+                            },
+                            options: function (pos, itemstotal) {
+                                return {
+                                    type: dynamics.bezier,
+                                    duration: 500,
+                                    points: [{"x": 0, "y": 0, "cp": [{"x": 0.2, "y": 1}]}, {"x": 1, "y": 1, "cp": [{"x": 0.3, "y": 1}]}],
+                                    //delay: (itemstotal-pos-1)*40
+                                };
+                            }
+                        },
+                        onGridLoaded: function () {
+                            classie.add(document.body, 'grid-loaded');
+                        }
+                    });
+                });
+            })();
+        </script>
+    </body>
+</html>
